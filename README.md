@@ -17,3 +17,9 @@ localhost berarti broker berjalan di komputer yang sama dengan aplikasi (localho
 5672 adalah port standar default yang digunakan RabbitMQ untuk koneksi AMQP.
 
 Jadi, string ini memberitahu aplikasi "gunakan username guest dengan password guest untuk mengakses RabbitMQ yang berjalan di mesin lokal pada port 5672."
+
+
+------
+Saat melakukan simulasi slow subscriber, jumlah pesan di antrean mencapai 25 karena subscriber memproses pesan lebih lambat dibandingkan kecepatan publisher mengirim pesan. Pesan-pesan baru terus masuk ke queue, namun subscriber belum selesai memproses pesan sebelumnya sehingga terjadi penumpukan.
+
+![image](static\images\image.png)
